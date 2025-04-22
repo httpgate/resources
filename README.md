@@ -108,7 +108,7 @@ Firefox设置同2 用pacurl翻墙，但只能用需要输入户名密码的pacur
 
 需要本机hosts文件加一条记录： 127.0.0.1  your.proxy.com
 
-也可以使用类似nextdns这样的Private DNS加密DNS服务，如果nextdns被封锁，可参考[CDN中转DOH服务](https://github.com/httpgate/wssproxy-agent/blob/main/CDN_PROXY_DOH.md)
+也可以使用类似nextdns这样的Private DNS加密DNS服务，如果nextdns被封锁，可参考[CDN中转DOH服务](https://github.com/httpgate/cdn-edge-script/blob/main/doc/CDN_PROXY_DOH.md)
 
 ## 测试
 
