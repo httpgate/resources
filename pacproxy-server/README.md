@@ -48,7 +48,7 @@ sudo ./server-linux
 ### 后台运行pacproxy服务：
 
 ```
-sudo nohup ./server-linux &
+nohup sudo ./server-linux &
 ```
 加nohup防止关闭ssh连接后服务中止, (如nohup有问题可以改用screen)
 
