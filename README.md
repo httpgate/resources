@@ -86,11 +86,11 @@ Firefox设置见上图，选中Manual proxy configuration
 
 在命令行运行wssagent软件，示例： ./wssagent-linux  wss://cdn.proxy.com/pacurl_direct/pac  443  -s
 
-Firefox设置同2 用pacurl翻墙，但只能用需要输入户名密码的pacurl: https://your.proxy.com/pacurl_need_password
+Firefox设置同上 用pacurl翻墙，但只能用需要输入户名密码的pacurl: https://your.proxy.com/pacurl_need_password
 
 需要本机hosts文件加一条记录： 127.0.0.1  your.proxy.com
 
-也可以使用类似nextdns这样的加密DNS，如果nextdns被封锁，可参考[CDN中转DOH服务](https://github.com/httpgate/cdn-edge-script/blob/main/doc/CDN_PROXY_DOH.md)
+也可以使用类似nextdns这样的加密DNS，创建nextdns账号后增加一条your.proxy.com的记录。如果nextdns被封锁，可参考[CDN中转DOH服务](https://github.com/httpgate/cdn-edge-script/blob/main/doc/CDN_PROXY_DOH.md)
 
 ## 测试
 
