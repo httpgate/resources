@@ -50,29 +50,11 @@ Firefox设置：
 
 ![Firefox设置图](Firefox.JPG)
 
-主流浏览器都支持pacproxy, 其他软件很多只支持普通proxy, 可以用[Stunnel](https://www.stunnel.org/)或类似软件将pacproxy转为普通的内网proxy。
-
-Stunnel的参考设置为：
-
-```
-foreground = yes
-
-[example-proxy]
-client = yes
-accept = 127.0.0.1:8080
-connect = your.proxy.com:443
-# Android暂不支持数字证书验证
-# veryfychain = yes
-```
-pacurl1 需要改为：http://127.0.0.1:8080/pacurl_direct
-
-pacurl2 需要改为：http://127.0.0.1:8080/pacurl_need_password
-
-建议使用[wssagent客户端软件](https://github.com/httpgate/wssproxy-agent)，比stunnel更安全方便，如下所示：
+主流浏览器都支持pacproxy, 其他软件很多只支持普通proxy, 建议使用[wssagent客户端软件](https://github.com/httpgate/wssproxy-agent)将pacproxy转换为本地普通proxy：
 
 ## 用websocket url (简称wssurl)翻墙：
 
-运行服务器后，服务器还会显示以下wssurl:
+运行服务器软件后，服务器还会显示以下wssurl:
 
 直连wssurl1:  wss://your.proxy.com/pacurl_direct   （用于全局代理，可让聊天软件等翻墙)
 
@@ -85,7 +67,7 @@ Firefox设置见上图，选中Manual proxy configuration
 
 ## 用支持websocket的CDN中转翻墙
 
-可以在类似cloudflare的支持websocket的CDN创建一个域名，如cdn.proxy.com，并将域名指向代理服务器的IP地址
+可以在类似cloudflare的支持websocket的CDN创建一个域名，如cdn.proxy.com，并将域名指向pacproxy服务器的IP地址
 
 CDN中转 wssurl1:   wss://cdn.proxy.com/pacurl_direct   （CDN能知道访问的网址和http传输内容）
 
@@ -98,17 +80,17 @@ Firefox设置见上图，选中Manual proxy configuration
 
 ## CDN中转加密pacprxy代理
 
-一般情况下利用wssagent和CDN中转的wssurl会将加密代理转换成本地非加密代理，在某些不安全的设备和网络上，可能希望在Firefox上设置加密pacurl实现端到端加密，则可在 wssurl后加 /pac
+在wssurl后加/pac 可将pacproxy的加密proxy中转到本地网络，此时只支持带用户密码的pacurl。
 
 用CDN中转wssurl: wss://cdn.proxy.com/pacurl_direct/pac   (传输内容对CDN，本地网络，本设备保密，仅Firefox解密)
 
 在命令行运行wssagent软件，示例： ./wssagent-linux  wss://cdn.proxy.com/pacurl_direct/pac  443  -s
 
-Firefox设置同2 用pacurl翻墙，但只能用需要输入户名密码的pacurl_need_password
+Firefox设置同2 用pacurl翻墙，但只能用需要输入户名密码的pacurl: https://your.proxy.com/pacurl_need_password
 
 需要本机hosts文件加一条记录： 127.0.0.1  your.proxy.com
 
-也可以使用类似nextdns这样的Private DNS加密DNS服务，如果nextdns被封锁，可参考[CDN中转DOH服务](https://github.com/httpgate/cdn-edge-script/blob/main/doc/CDN_PROXY_DOH.md)
+也可以使用类似nextdns这样的加密DNS，如果nextdns被封锁，可参考[CDN中转DOH服务](https://github.com/httpgate/cdn-edge-script/blob/main/doc/CDN_PROXY_DOH.md)
 
 ## 测试
 
