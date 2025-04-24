@@ -61,7 +61,7 @@ tail -f nohup.out
 ### 停止pacproxy服务
 
 ```
-ps -ef | grep node
+ps -ef | grep server-linux
 sudo kill -9 找到的pid
 ```
 
