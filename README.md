@@ -90,7 +90,7 @@ Firefox设置同上 用pacurl翻墙，但只能用需要输入户名密码的pac
 
 需要本机hosts文件加一条记录： 127.0.0.1  your.proxy.com
 
-也可以使用类似nextdns这样的加密DNS，创建nextdns账号后增加一条your.proxy.com的记录。如果nextdns被封锁，可参考[CDN中转DOH服务](https://github.com/httpgate/cdn-edge-script/blob/main/doc/CDN_PROXY_DOH.md)
+也可以使用类似nextdns这样的加密DNS，创建nextdns账号后在settings的Rewrites增加一条your.proxy.com的记录，firefox的DOH设置为youraccount.dns.nextdns.io 。如果nextdns被封锁，可参考[CDN中转DOH服务](https://github.com/httpgate/cdn-edge-script/blob/main/doc/CDN_PROXY_DOH.md)
 
 ## 测试
 
