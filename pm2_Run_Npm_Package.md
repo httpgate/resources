@@ -10,7 +10,7 @@ NPM库一般经过测试，与直接下载Github代码运行相比，更加安�
 
 * 安装 PM2： sudo npm install -g pm2
 
-* 安装 pacproxy-https-server:  sudo npm install -g pacproxy-https-server
+* 安装 pacproxy-https-server：  sudo npm install -g pacproxy-https-server
 
 * 创建一个运行文件夹，编辑保存current.site.cfg, 运行测试 pacproxy-https-server, 直到运行一切正常。空白文件夹在第一次运行时会生成current.site.cfg文件。
 ```
