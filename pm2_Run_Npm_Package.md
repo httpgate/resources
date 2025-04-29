@@ -17,6 +17,7 @@ NPM库一般经过测试，与直接下载Github代码运行相比，更加安�
 mkdir pacproxy-https-server
 cd pacproxy-https-server
 sudo pacproxy-https-server
+nano current.site.cfg
 ```
 
 * 测试正常后，用PM2运行服务, 并查看运行结果

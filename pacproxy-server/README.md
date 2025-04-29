@@ -15,6 +15,11 @@ pacproxy runs in a web server 在vps服务器上运行的pacproxy
 
 需要ssh到服务器的命令行，新手推荐用Bitvise SSH Client
 
+## 推荐用PM2运行
+
+推荐用pm2[直接运行npm库](https://github.com/httpgate/resouces/tree/main/pm2_Run_Npm_Package.md)
+
+不需要等待编译好的软件，可直接运行最新的版本。
 
 ## 运行(以Windows为例)
 
