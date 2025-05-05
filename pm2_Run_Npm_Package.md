@@ -33,7 +33,7 @@ sudo pm2 restart pacproxy-https-server --cron-restart="45 13 * * *"
 
 * 更新NPM库到最新版本， 并查看当前版本：
 ```
-sudo npm update pacproxy-https-server
+sudo npm update -g pacproxy-https-server
 sudo npm list -g pacproxy-https-server
 ```
 
