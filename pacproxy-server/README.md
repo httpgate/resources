@@ -7,13 +7,18 @@ pacproxy runs in a web server 在vps服务器上运行的pacproxy
 关于pacproxy参见[pacproxy.js](https://github.com/httpgate/pacproxy.js)
 
 
+
 ## 准备
 
-需要能运行nodejs的服务器, 新手建议选用Debian服务器
+* 需要能运行nodejs的服务器, 建议选用Debian服务器
 
-需要[申请一个域名](https://github.com/httpgate/pacproxy.js/blob/main/documents/About_Domain_ZH.md)，并将域名指向服务器IP
+* 需要[申请一个域名](https://github.com/httpgate/pacproxy.js/blob/main/documents/About_Domain_ZH.md)，并将域名指向服务器公网IP
 
-需要ssh到服务器的命令行，新手推荐用Bitvise SSH Client
+* 需要能够临时占用服务器公网IP的80端口，或者Cloudflare管理的域名需要获取[DNS API Token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/), 其他域名可以[托管到Cloudflare](https://developers.cloudflare.com/fundamentals/setup/manage-domains/add-site/)
+
+* 需要ssh到服务器的命令行，推荐用[Bitvise SSH Client](https://bitvise.com/ssh-client-download)
+
+* 需要准备服务器设置文件current.site.cfg, 空白文件夹下第一次运行服务器会生成该文件样板，详情参考[样板](current.site.cfg)
 
 ## 推荐用PM2运行
 
