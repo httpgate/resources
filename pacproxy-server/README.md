@@ -7,7 +7,6 @@ pacproxy runs in a web server 在vps服务器上运行的pacproxy
 关于pacproxy参见[pacproxy.js](https://github.com/httpgate/pacproxy.js)
 
 
-
 ## 准备
 
 * 需要能运行nodejs的服务器, 建议选用Debian服务器
@@ -20,11 +19,13 @@ pacproxy runs in a web server 在vps服务器上运行的pacproxy
 
 * 需要准备服务器设置文件current.site.cfg, 空白文件夹下第一次运行服务器会生成该文件样板，详情参考[样板](current.site.cfg)
 
+
 ## 推荐用PM2运行
 
 推荐用pm2[直接运行npm库](https://github.com/httpgate/resouces/tree/main/pm2_Run_Npm_Package.md)
 
 不需要等待编译好的软件，可直接运行最新的版本。
+
 
 ## 运行(以Windows为例)
 
@@ -42,8 +43,24 @@ pacproxy runs in a web server 在vps服务器上运行的pacproxy
 ### 修改网站参数设置current.site.cfg：
 
 ```
+mkdir website
 nano current.site.cfg 
 ```
+
+### 设置website参数
+
+* current.site.cfg里的website参数可以为空'', 可以是外部网站URL, 可以是true或false
+
+* 设置为true或false时需要先在当前文件夹下创建website文件夹：mkdir website
+
+* 设置为true时website文件夹可放一个静态网站，或一些可下载的文件。可以用chrome浏览器访问某个网页，然后保存到website文件夹里，类型选”Webpage, Complete", 文件名为：index.html
+
+* 设置为false时会将website显示为一个文件夹，列出website里的所有文件。此时建议设置website_auth参数，保护信息隐私
+
+* 设置website为外部网站URL时会将该网站的内容显示到自己的网站上，此时需要留意黑客DDOS攻击，会导致自己IP因为中转DDOS攻击被该外部网站和一些CDN屏蔽。此时可设置website_auth参数, 或改为使用本地网站。
+
+* website参数设置好后，浏览器访问： https://your.site.domain 可以显示网站的内容，也可以将一些需要分享给他人下载的文件放到website文件夹内
+
 
 ### 运行pacproxy服务：
 
