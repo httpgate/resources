@@ -3,7 +3,7 @@ A local proxy agent connecting to remote websocket proxy server. Abbreviated as 
 
 把远端的websocket加密代理服务器映射为本地的非加密普通代理服务器，简称为wssagent
 
-支持DOH(DNS over https)，保护用户隐私
+支持DOH(DNS over https)，保护用户隐私，且有网络加速的效果
 
 
 # 使用
@@ -16,18 +16,18 @@ A local proxy agent connecting to remote websocket proxy server. Abbreviated as 
 
 也可以使用local pacurl来限制只一个浏览器翻墙，如只firefox翻墙可设置pacurl: http://localhost:[PROXY_PORT]/pac/firefox
 
+手机用户参照[Android系统wssagent说明](\/example\/README\.md)
+
 
 # 运行
 
-推荐用pm2[直接运行wssagent的npm库](https://github.com/httpgate/resouces/tree/main/pm2_Run_Npm_Package.md)
-
-也可下载直接点击[绿色可执行文件](https://github.com/httpgate/resouces/tree/main/wssproxy-agent)，或在命令行执行，按以下顺序加上可选参数:
+可下载直接点击[绿色可执行文件](https://github.com/httpgate/resouces/tree/main/wssproxy-agent)，或在命令行执行，按以下顺序加上可选参数:
 
 nohup ./wssagent-linux  [WSSURL]  [PROXY_PORT]  [-s]  [DOH_SERVER]  [WSSIP]  [CONNECT_DOMAIN]
 
 或编辑wssagent同一目录下的 [wss.env文件](wss.env)，设置运行参数
 
-* Linux系统下的可执行文件只能在命令行下执行，除了[WSSURL]外其它参数不是必须输入
+* Linux系统下的可执行文件只能在命令行下执行，除了[WSSURL]外其它参数都可选
 
 * 默认只本机能用代理，加 -s 可分享本机IP和端口给同一网段，其他参数说明见 [wss.env文件](wss.env)
 
@@ -39,15 +39,29 @@ nohup ./wssagent-linux  [WSSURL]  [PROXY_PORT]  [-s]  [DOH_SERVER]  [WSSIP]  [CO
 
 * 如果同时指定了[WSSIP] 和 [DOH_SERVER]，连接时会用[WSSIP]连接服务器，但屏幕会显示[DOH_SERVER]解析域名的结果用于核对IP地址和DOH服务
 
+
+# 后台运行
+
+* 建议用pm2后台运行
+
+```
+sudo npm install -g pm2
+sudo pm2 start wssagent-linux -- [WSSURL]  [PROXY_PORT]  [-s] 
+```
+
+* 具体请参考[用pm2直接运行npm库](https://github.com/httpgate/resouces/tree/main/pm2_Run_Npm_Package.md)
+
+
 # 用途
 
 * 很多软件不支持https加密的pacproxy代理， 用wssagent就可以在一台电脑上把pacproxy加密代理转换成普通代理，整个局域网都可以按普通方式代理上网
 
 * 利用CDN中转突破封锁或加强隐私。CDN中转后proxy服务器不知道访问者的真实IP,CDN服务器不知道访问目标。如果海外的pacproxy服务器被封了。可以自己在cloudflare之类的支持websocket的CDN上注册一个账户, 并注册一个CDN域名， 指向远端的pacproxy服务器ip，SSL/TLS mode设置为FULL, 然后把[WSSURL]中的域名替换成CDN域名, 就又可以连上了。
 
-* wssagent可以利用CDN转发，但会将加密proxy转成普通非加密代理。如果希望在某些不安全的设备或网络上，通过Firefox设置加密PAC URL实现端到端加密，可在参数[WSSURL]后加/pac, 在Firefox上设置带用户密码的PAC URL。 但需要本机hosts文件记录修改域名指向到wssagent的IP，或者用[nextdns](https://my.nextdns.io/login)修改dns指向。不建议将真实DNS指向wssagent的IP, 有数字证书被盗用的风险。
+* wssagent可以利用CDN转发，但会将加密proxy转成普通非加密代理。如果希望在某些不安全的设备或网络上，通过Firefox设置加密PAC URL实现端到端加密，可在参数[WSSURL]后加/pac
 
 * 详情可参考[使用案例](https://github.com/httpgate/resources/blob/main/README.md)
+
 
 # 安全
 
