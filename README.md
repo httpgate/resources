@@ -94,6 +94,6 @@ Firefox设置同上 用pacurl翻墙，但只能用需要输入户名密码的pac
 
 ## 测试
 
-简单验证：https://whatismyipaddress.com/   检查是否是pacproxy服务的IP
+简单验证：https://ifconfig.me/   检查是否是pacproxy服务的IP
 
 性能测试：干净世界 https://www.ganjing.com/ 等视频网站
