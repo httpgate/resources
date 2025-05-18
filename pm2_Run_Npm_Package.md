@@ -40,12 +40,19 @@ sudo npm list -g pacproxy-https-server
 
 * 其他NPM库运行也类似，如果要带参数运行，可在 -- 后增加运行参数：
 ```
-sudo npm start wssagent -- [WSSURL] [PORT] -S
-sudo npm start pacproxy-js -- ./example.site.domain/product.cfg
+sudo pm2 start wssagent -- [WSSURL] [PORT] -S
+sudo pm2 start pacproxy-js -- ./example.site.domain/product.cfg
 ```
+
+* Windows系统下用pm2直接运行npm库可能报错，此时可改为用pm2运行绿色可执行文件，参数分割符号由 -- 改为 -- --
+```
+pm2 start wssagent-win.exe -- -- [WSSURL] [PORT] -S
+pm2 start server-win.exe
+```
+
 
 * 如果需要机器重启时恢复PM2的当前任务
 ```
-sudo npm save
-sudo npm startup
+sudo pm2 save
+sudo pm2 startup
 ```
