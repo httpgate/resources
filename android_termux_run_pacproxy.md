@@ -61,7 +61,7 @@ pm2 start ~/../usr/bin/pacproxy-https-server
 
 详情[参考pacproxy服务器](https://github.com/httpgate/pacproxy-server)
 
-## 推荐
+## >推荐
 
 推荐用prcproxy安全的访问以下网站：
 * 明慧网：https://www.minghui.org
