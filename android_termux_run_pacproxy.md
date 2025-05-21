@@ -1,6 +1,6 @@
 # 用Android的Termux运行pacproxy服务
 
-##- 安装Termux
+## >安装Termux
 
 手机安装[Termux](https://play.google.com/store/apps/details?id=com.termux) 或[下载apk文件](https://termux.dev/en/)安装
 
@@ -15,7 +15,7 @@ ifconfig
 ```
 启用后可用[Bitvise SSH Client](https://bitvise.com/ssh-client-download) 或其他SSH工具连接，默认端口是8022, IP是ifconfig命令显示的IP
 
-## Termux安装nodejs
+## >Termux安装nodejs
 
 ```
 apt update
@@ -23,7 +23,7 @@ apt upgrade
 apt install nodejs
 ```
 
-## 用npm安装pacproxy-https-server
+## >用npm安装pacproxy-https-server
 
 ```
 mkdir pacproxy-https-server
@@ -31,7 +31,7 @@ cd pacproxy-https-server
 npm install -g pacproxy-https-server
 ```
 
-## 设置和运行pacproxy-https-server
+## >设置和运行pacproxy-https-server
 
 ```
 pacproxy-https-server
@@ -46,14 +46,14 @@ pacproxy-https-server
 
 建议将手机ip地址改为静态地址，修改保存设置后继续测试，直到正常运行
 
-## 后台运行pacproxy-https-server
+## >后台运行pacproxy-https-server
 
 ```
 npm install -g pm2
 pm2 start ~/../usr/bin/pacproxy-https-server
 ```
 
-## 路由器设置端口映射
+## >路由器设置端口映射
 
 登录家里路由器管理页面，设置WAN端口映射,80端口映射到手机内网ip的8080端口，8443端口映射到手机内网ip的8443端口
 
