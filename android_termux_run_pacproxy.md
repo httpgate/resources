@@ -1,6 +1,6 @@
 # 用Android的Termux运行pacproxy服务
 
-## **安装Termux**
+##- 安装Termux
 
 手机安装[Termux](https://play.google.com/store/apps/details?id=com.termux) 或[下载apk文件](https://termux.dev/en/)安装
 
