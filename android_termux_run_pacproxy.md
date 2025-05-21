@@ -51,6 +51,7 @@ pacproxy-https-server
 npm install -g pm2
 pm2 start ~/../usr/bin/pacproxy-https-server
 ```
+在手机的通知信息栏找到Termux, 点击Acquire wakelock按钮，防止手机休眠。第一次点击时会要求授予Termux后台运行权限。
 
 ## >路由器设置端口映射
 
