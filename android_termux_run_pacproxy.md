@@ -35,7 +35,6 @@ npm install -g pacproxy-https-server
 
 ```
 pacproxy-https-server
-ifconfig
 nano current.site.cfg
 pacproxy-https-server
 ```
