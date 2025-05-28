@@ -8,6 +8,7 @@ pac加密代理服务器，编译好的绿色可执行程序和说明文档
 
 客户端软件wssagent在[wssproxy-agent文件夹](wssproxy-agent)
 
+share模块在 [pacproxy-share文件夹](pacproxy-share)
 
 ## 推荐
 
