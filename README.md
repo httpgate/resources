@@ -79,7 +79,7 @@ CDN中转 wssurl2:   wss://cdn.proxy.com/pacurl_direct/tls   (传输内容对CDN
 Firefox设置见上图，选中Manual proxy configuration
 
 
-## CDN中转加密pacprxy代理
+## CDN中转加密pacproxy代理
 
 在wssurl后加/pac 可将pacproxy的加密proxy中转到本地网络，此时只支持带用户密码的pacurl。
 
