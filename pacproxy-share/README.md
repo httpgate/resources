@@ -53,13 +53,15 @@ sudo pm2 start share-linux -- [DOMAIN]  [ROOT]  [PORT]
 
 一般运行pacproxy-share后, 需要再利用加密反向代理服务（如Nginx,LiteSpeed等）将其转换成加密网站，或直接利用CDN转换成加密网站。 http模式仅用于测试用。
 
-[pacproxy-server](https://github.com/httpgate/pacproxy-server)集成了pacproxy-share模块，可根据需要选用。
+[pacproxy-server](https://github.com/httpgate/pacproxy-server)集成了pacproxy-share模块，可根据需要选用。但建议与其他用途的pacproxy-server分开部署。
 
-可利用一些短网址功能指向一些常用网址，并用带背景的图片传播。
+可利用一些短网址功能指向一些常用网址，并用带背景的图片传播。尽量避开微信浏览器，微信直接打开链接时是用微信浏览器。
 
 建议用CDN加速，如果被屏蔽只需要变更CDN域名即可。 可用CDN的URL Redirect Rule功能将一些常用网址映射成短网址，方便输入。
 
-如果用CDN加速，运行时domain参数为CDN Domain.
+如果用CDN加速，运行时domain参数为CDN Domain. 
+
+Cloudfront CDN默认禁止了了POST method, 如果用Cloudfront需要启用。
 
 
 ## 推荐
